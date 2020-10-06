@@ -1,0 +1,6 @@
+/macros/target
+/modules/*/target
+/project/project/target
+/project/target
+/target
+/.env
