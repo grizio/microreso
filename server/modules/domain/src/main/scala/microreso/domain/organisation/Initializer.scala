@@ -17,7 +17,7 @@ class Initializer(
   def initialize(input: Initialize): Future[InitializationResult] = {
     (for {
       isInitialized <- EitherT.liftF(organisationRepository.isInitialized())
-      _ <- EitherT.cond[Future](isInitialized, (), AlreadyInitialized)
+      _ <- EitherT.cond[Future](!isInitialized, (), AlreadyInitialized)
       organisation = Organisation(
         code = input.code,
         name = input.name

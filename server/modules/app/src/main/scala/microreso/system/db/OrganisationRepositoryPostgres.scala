@@ -25,7 +25,7 @@ class OrganisationRepositoryPostgres()(
         .offset(0)
         .limit(1)
     }
-      .map(OrganisationTable.apply)
+      .map(OrganisationTable.apply(o))
       .single()
       .apply()
   }
@@ -39,6 +39,7 @@ class OrganisationRepositoryPostgres()(
     withSQL {
       insertInto(OrganisationTable)
         .namedValues(
+          c.code -> organisation.code.value,
           c.name -> organisation.name
         )
     }
@@ -60,10 +61,11 @@ object OrganisationRepositoryPostgres {
   object OrganisationTable extends SQLSyntaxSupport[OrganisationTable] {
     override val tableName = "organisation"
 
-    def apply(rs: WrappedResultSet): OrganisationTable = {
+    def apply(p: SyntaxProvider[OrganisationTable])(rs: WrappedResultSet): OrganisationTable = apply(p.resultName)(rs)
+    def apply(p: ResultName[OrganisationTable])(rs: WrappedResultSet): OrganisationTable = {
       OrganisationTable(
-        code = rs.get[String](c.code),
-        name = rs.get[String](c.name)
+        code = rs.get[String](p.code),
+        name = rs.get[String](p.name)
       )
     }
   }
