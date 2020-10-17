@@ -3,7 +3,7 @@ package microreso
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import microreso.system.db.{DatabaseMigration, DatabaseTransaction}
-import microreso.system.http.Router
+import microreso.system.http.{Router, WebRouter}
 import microreso.system.organisation.InitializerFactory
 
 import scala.concurrent.{ExecutionContextExecutor, Future}
@@ -21,7 +21,8 @@ object Main extends App {
 
   val initializerFactory = new InitializerFactory()
 
-  val router = new Router(databaseTransaction, initializerFactory)
+  val webRouter = new WebRouter(databaseTransaction, initializerFactory)
+  val router = new Router(databaseTransaction, initializerFactory, webRouter)
 
 
   val bindingFuture = for {

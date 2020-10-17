@@ -4,7 +4,7 @@
   "scripts": {
     "prebuild": "openapi-generator-cli generate",
     "build": "rollup -c",
-    "build-prod": "npm run build && cp -R build ../server/modules/app/src/main/resources/web",
+    "build:prod": "npm run build && rm -rf ../server/modules/app/src/main/resources/web && cp -R build ../server/modules/app/src/main/resources/web",
     "dev": "rollup -c -w main",
     "dev:initialize": "rollup -c -w initialize",
     "dev:main": "rollup -c -w main",

@@ -28,6 +28,10 @@ class Initializer(
     })
       .merge[InitializationResult]
   }
+
+  def checkInitialization(): Future[Boolean] = {
+    organisationRepository.isInitialized()
+  }
 }
 
 object Initializer {

@@ -23,3 +23,6 @@ guardrailTasks in Compile := List(
     framework = "akka-http"
   )
 )
+
+mainClass in compile := Some("microreso.Main")
+mainClass in run := Some("microreso.Main")

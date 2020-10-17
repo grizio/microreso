@@ -20,14 +20,14 @@
     code = event.detail.value
   }
 
-  function submit(event) {
+  async function submit(event) {
     event.preventDefault()
-    api.createOrganisation({
+    const result = await api.createOrganisation({
       initialize: {
         code, name
       }
     })
-    console.log(event, name, code)
+    window.location.reload()
   }
 </script>
 
