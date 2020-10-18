@@ -4,9 +4,13 @@
   import VerticalLayout from "../../component/layout/VerticalLayout.svelte"
   import {canonicalize} from "../../utils/strings"
   import api from "../../api"
+  import InputPassword from "../../component/form/InputPassword.svelte"
 
   let name: string = ""
   let code: string = ""
+  let email: string = ""
+  let username: string = ""
+  let password: string = ""
 
   function onNameChanged(event) {
     const newValue = event.detail.value
@@ -22,9 +26,12 @@
 
   async function submit(event) {
     event.preventDefault()
-    const result = await api.createOrganisation({
+    const result = await api.initialize({
       initialize: {
-        code, name
+        code, name,
+        admin: {
+          email, username, password
+        }
       }
     })
     window.location.reload()
@@ -42,8 +49,9 @@
   form {
     width: 500px;
     margin: auto;
-    box-shadow: 0 0 5px #555555;
+    box-shadow: 0 0 5px rgba(102, 102, 102, 0.75);
     padding: var(--space-8);
+    border-radius: 4px;
   }
 </style>
 
@@ -68,6 +76,30 @@
         placeholder="ex: my-microreso"
         value={code}
         on:change={onCodeChanged}
+      />
+
+      <InputText
+        id="initialize-email"
+        name="email"
+        label="Admin’s email"
+        placeholder="ex: the@bos.se"
+        bind:value={email}
+      />
+
+      <InputText
+        id="initialize-username"
+        name="username"
+        label="Admin’s username (letters, numbers and ‘-’ only)"
+        placeholder="ex: theboss"
+        bind:value={username}
+      />
+
+      <InputPassword
+        id="initialize-password"
+        name="password"
+        label="Admin’s password"
+        placeholder="Please ensure to use a strong password and/or a password manager"
+        bind:value={password}
       />
 
       <div class="actions">

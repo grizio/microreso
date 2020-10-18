@@ -7,6 +7,7 @@ object Dependencies {
   val akkaStream = "com.typesafe.akka" %% "akka-stream" % "2.6.9"
   val akkaHttp = "com.typesafe.akka" %% "akka-http" % "10.2.1"
   val akkaHttpSpray = "com.typesafe.akka" %% "akka-http-spray-json" % "10.2.1"
+  val bcrypt = "org.mindrot" % "jbcrypt" % "0.4"
   val cats = "org.typelevel" %% "cats-core" % "2.2.0"
   val circeCore = "io.circe" %% "circe-core" % "0.13.0"
   val circeGeneric = "io.circe" %% "circe-generic" % "0.13.0"

@@ -12,24 +12,17 @@
     }
   ],
   "paths": {
-    "/api/organisation": {
+    "/api/application/initialize": {
       "post": {
-        "operationId": "createOrganisation",
-        "x-jvm-package": "organisation",
-        "description": "Create the organisation",
+        "operationId": "initialize",
+        "x-jvm-package": "application",
+        "description": "Initialize the application",
         "requestBody": {
           "$ref": "#/components/requestBodies/Initialize"
         },
         "responses": {
           "200": {
-            "description": "Organisation created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Organisation"
-                }
-              }
-            }
+            "description": "Application initialized"
           },
           "400": {
             "description": "Issue with given body",
@@ -78,7 +71,8 @@
         "type": "object",
         "required": [
           "code",
-          "name"
+          "name",
+          "admin"
         ],
         "properties": {
           "code": {
@@ -86,21 +80,21 @@
           },
           "name": {
             "type": "string"
-          }
-        }
-      },
-      "Organisation": {
-        "type": "object",
-        "required": [
-          "code",
-          "name"
-        ],
-        "properties": {
-          "code": {
-            "type": "string"
           },
-          "name": {
-            "type": "string"
+          "admin": {
+            "type": "object",
+            "required": ["username", "password", "email"],
+            "properties": {
+              "username": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            }
           }
         }
       }

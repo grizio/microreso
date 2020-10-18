@@ -4,7 +4,7 @@ import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.server.Directives._
 import akka.stream.Materializer
 import microreso.system.db.DatabaseTransaction
-import microreso.system.http.api.organisation.OrganisationResource
+import microreso.system.http.api.application.ApplicationResource
 import microreso.system.organisation.InitializerFactory
 
 import scala.concurrent.ExecutionContext
@@ -20,5 +20,5 @@ class Router(
 ) {
   def route: Route = organisationRoute ~ webRouter.route
 
-  private def organisationRoute: Route = OrganisationResource.routes(new OrganisationApi(databaseTransaction, initializerFactory))
+  private def organisationRoute: Route = ApplicationResource.routes(new ApplicationApi(databaseTransaction, initializerFactory))
 }

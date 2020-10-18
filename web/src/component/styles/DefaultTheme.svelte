@@ -12,6 +12,7 @@
     font-size: var(--font-size-largest);
     color: var(--color-text);
     font-weight: 700;
+    margin: 8px 0;
   }
 
   :global(.default-theme h2) {
