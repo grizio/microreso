@@ -62,7 +62,8 @@
     --font-roboto: 'Roboto', sans-serif;
 
     /* icons */
-    --icon-size-15: 15px;
-    --icon-size-25: 25px;
+    --icon-size-16: 16px;
+    --icon-size-24: 24px;
+    --icon-size-32: 32px;
   }
 </style>

@@ -109,7 +109,7 @@
   .input {
     border: 1px solid var(--input-color-border);
     display: grid;
-    grid-template-columns: auto var(--icon-size-15);
+    grid-template-columns: auto var(--icon-size-16);
     grid-column-gap: var(--space-4);
     padding: var(--space-4);
     align-items: center;

@@ -1,6 +1,6 @@
 <script lang="ts">
   import InputText from "../../component/form/InputText.svelte"
-  import PrimaryButton from "../../component/button/PrimaryButton.svelte"
+  import TextButton from "../../component/button/TextButton.svelte"
   import VerticalLayout from "../../component/layout/VerticalLayout.svelte"
   import {canonicalize} from "../../utils/strings"
   import api from "../../api"
@@ -103,7 +103,7 @@
       />
 
       <div class="actions">
-        <PrimaryButton text="Create my organisation"/>
+        <TextButton text="Create my organisation"/>
       </div>
     </VerticalLayout>
   </form>

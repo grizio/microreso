@@ -7,6 +7,7 @@ export default {
       control: "text",
       defaultValue: "Some text inside"
     },
+
   }
 }
 
