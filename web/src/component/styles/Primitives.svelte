@@ -40,7 +40,7 @@
     --color-red-lighter: #F27D8D;
     --color-red-lightest: #F8B5BE;
 
-    --color-snow: #FCF7F8;
+    --color-background: #FCF7F8;
 
     /* Spacing */
     --space-2: 2px;
@@ -50,7 +50,7 @@
     --space-16: 16px;
     --space-20: 20px;
     --space-24: 24px;
-    --space-38: 38px;
+    --space-28: 28px;
 
     /* Font sizes */
     --font-size-largest: 24px;

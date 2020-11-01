@@ -1,7 +1,7 @@
 <style>
   :global(.default-theme) {
     --color-text: var(--color-grey-darker);
-    --color-background: var(--color-snow);
+    --color-background: var(--color-background);
     --color-primary: var(--color-blue-light);
     --color-secondary: var(--color-green-dark);
     --color-emphasize: var(--color-yellow-light);
