@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {IconName, Size, Style} from "./helpers"
+  import type {IconName, Size, Style} from "./helpers"
   import IconCalendar from "./IconCalendar.svelte"
   import IconChat from "./IconChat.svelte"
   import IconCheck from "./IconCheck.svelte"

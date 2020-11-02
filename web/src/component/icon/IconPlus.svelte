@@ -1,5 +1,6 @@
 <script lang="ts">
-  import {Size, Style, sizeMap} from "./helpers"
+  import type {Size, Style} from "./helpers"
+  import {sizeMap} from "./helpers"
 
   export let size: Size = "medium"
   export let style: Style = "fill"
