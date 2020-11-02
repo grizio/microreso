@@ -2,6 +2,7 @@
   type Type = "primary"
   export let type: Type = "primary"
   export let text: string
+  export let testId: string | undefined = undefined
 </script>
 
 <style>
@@ -33,6 +34,6 @@
   }
 </style>
 
-<button class:primary={type === "primary"}>
+<button class:primary={type === "primary"} data-test-id={testId}>
   {text}
 </button>

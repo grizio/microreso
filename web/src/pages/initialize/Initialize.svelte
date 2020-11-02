@@ -103,7 +103,7 @@
       />
 
       <div class="actions">
-        <TextButton text="Create my organisation"/>
+        <TextButton text="Create my organisation" testId="initialize-submit"/>
       </div>
     </VerticalLayout>
   </form>

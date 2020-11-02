@@ -168,6 +168,7 @@
   class:weak={strength > min && strength < low}
   class:medium={strength >= low && strength < high}
   class:strong={strength >= high}
+  data-test-id={`${id}-container`}
 >
   <label for={id}>{label}</label>
   <div class="input">

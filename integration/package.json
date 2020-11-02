@@ -1,0 +1,11 @@
+{
+  "name": "integration",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cypress open"
+  },
+  "devDependencies": {
+    "typescript": "4.0.5",
+    "cypress": "5.5.0"
+  }
+}
