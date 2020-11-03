@@ -1,7 +1,7 @@
 import PrimaryTextButtonView from "./text-primary.stories.svelte"
 
 export default {
-  title: "Buttons",
+  title: "Button/Text",
   argTypes: {
     text: {
       control: "text",

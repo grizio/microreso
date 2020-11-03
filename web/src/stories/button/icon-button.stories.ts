@@ -1,10 +1,8 @@
 import PrimaryIconButtonView from "./icon-primary.stories.svelte"
 import {allIconNames} from "../../component/icon/helpers"
 
-console.log(allIconNames)
-
 export default {
-  title: "Buttons",
+  title: "Button/Icon",
   argTypes: {
     icon: {
       control: {

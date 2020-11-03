@@ -1,9 +1,7 @@
 <script lang="ts">
   import Icon from "../icon/Icon.svelte"
-  import {IconName} from "../icon/helpers"
+  import type {IconName, Style, Mode} from "../icon/helpers"
   type Type = "primary"
-  type Style = "fill" | "stroke"
-  type Mode = "dark" | "light"
 
   export let icon: IconName
   export let style: Style

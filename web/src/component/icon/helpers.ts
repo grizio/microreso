@@ -1,5 +1,6 @@
 export type Size = "small" | "medium" | "large"
 export type Style = "fill" | "stroke"
+export type Mode = "dark" | "light"
 
 export const sizeMap: Record<Size, number> = {
   small: 16,

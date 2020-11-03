@@ -19,21 +19,25 @@
 
   $: strength = computeStrength(value)
 
-  function computeStrength(value: string): number {
-    let multiplicity = 0
-    if (value.match(/[a-z]/g)) {
-      multiplicity += 1
+  function computeStrength(value: string | undefined): number {
+    if (value === undefined) {
+      return 0
+    } else {
+      let multiplicity = 0
+      if (value.match(/[a-z]/g)) {
+        multiplicity += 1
+      }
+      if (value.match(/[A-Z]/g)) {
+        multiplicity += 1
+      }
+      if (value.match(/[0-9]/g)) {
+        multiplicity += 1
+      }
+      if (value.match(/[^a-zA-Z0-9]/g)) {
+        multiplicity += 1
+      }
+      return multiplicity * value.length
     }
-    if (value.match(/[A-Z]/g)) {
-      multiplicity += 1
-    }
-    if (value.match(/[0-9]/g)) {
-      multiplicity += 1
-    }
-    if (value.match(/[^a-zA-Z0-9]/g)) {
-      multiplicity += 1
-    }
-    return multiplicity * value.length
   }
 
   const dispatch = createEventDispatcher()
